@@ -1,0 +1,382 @@
+/* Centering the box in the container */
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+/* Updated box styles */
+.box {
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(174, 138, 121, 0.15);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+}
+
+.box:hover {
+    box-shadow: 0 6px 16px rgba(174, 138, 121, 0.25);
+}
+
+/* Title bar background */
+.title-bar {
+    background-color: #AE8A79; /* Title bar background color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: relative;
+}
+
+/* Separate color control for title text */
+.title-text {
+    color: #ffffff; /* Color of the title text */
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Styling for circular buttons */
+.folder-btn, .add-image-btn, .close-btn {
+    background-color: #FFFFFF; /* Background color for buttons */
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    color: #333; /* Icon color */
+    font-size: 20px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.folder-btn i, .add-image-btn i {
+    font-size: 20px;
+}
+
+.folder-btn:hover, .add-image-btn:hover, .close-btn:hover {
+    background-color: rgba(154, 118, 101, 0.8); /* Hover color for buttons */
+    border-color: #FFF;
+    color: #FFF;
+}
+
+/* Content layout with pastel colors */
+.box-content {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    overflow: hidden;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.left-side {
+    background-color: #f9f6f4;
+    width: 30%;
+    border-right: 1px solid rgba(174, 138, 121, 0.2);
+    padding: 12px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+/* Album styling */
+.album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.album:hover {
+    background-color: rgba(174, 138, 121, 0.1);
+}
+
+.album img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 6px rgba(174, 138, 121, 0.1);
+}
+
+.album span {
+    font-size: 13px;
+    text-align: center;
+    color: rgb(174, 138, 121);
+}
+
+.album.highlighted {
+    background-color: rgba(174, 138, 121, 0.15);
+    border: 2px solid rgb(174, 138, 121);
+}
+
+/* Right side */
+.right-side {
+    background-color: #fff;
+    width: 70%;
+    padding: 15px 25px;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Placeholder message */
+#please {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: rgb(174, 138, 121);
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* Image grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+    padding: 12px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(174, 138, 121, 0.1);
+}
+
+.image-grid img:hover {
+    transform: scale(1.6);
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(174, 138, 121, 0.2);
+}
+
+/* Scrollbar styling */
+.left-side::-webkit-scrollbar,
+.right-side::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left-side::-webkit-scrollbar-thumb,
+.right-side::-webkit-scrollbar-thumb {
+    background-color: rgba(174, 138, 121, 0.3);
+    border-radius: 10px;
+}
+
+.left-side::-webkit-scrollbar-track,
+.right-side::-webkit-scrollbar-track {
+    background: rgba(174, 138, 121, 0.05);
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(174, 138, 121, 0.15);
+    backdrop-filter: blur(8px);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 10vh auto;
+    padding: 40px;
+    border: none;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(174, 138, 121, 0.15);
+    transform: translateY(30px);
+    opacity: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border: 2px solid rgba(174, 138, 121, 0.15);
+    border-radius: 15px;
+    font-size: 16px;
+    color: rgb(174, 138, 121);
+    background-color: #f9f6f4;
+    transition: all 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus {
+    outline: none;
+    border-color: rgb(174, 138, 121);
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(174, 138, 121, 0.1);
+}
+
+.modal-content button {
+    background-color: rgb(174, 138, 121);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.modal-content button:hover {
+    background-color: rgb(154, 118, 101);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(174, 138, 121, 0.2);
+}
+
+.modal-content button.cancel {
+    background-color: transparent;
+    color: rgb(174, 138, 121);
+    border: 2px solid rgb(174, 138, 121);
+}
+
+.modal-content button.cancel:hover {
+    background-color: rgba(174, 138, 121, 0.1);
+    color: rgb(154, 118, 101);
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f9f6f4;
+    color: rgb(174, 138, 121);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.close:hover {
+    background-color: rgb(174, 138, 121);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Modal Title */
+.modal-title {
+    font-size: 24px;
+    color: rgb(174, 138, 121);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Animation for modal fade-in and fade-out */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+/* Overall font styling */
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.text-center {
+    font-family: 'Georgia', sans-serif;
+    color: #ffffff;
+}
+
+/* Styling for circular delete button */
+.delete-btn {
+    background-color: #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn i {
+    font-size: 20px;
+}
+
+.delete-btn:hover {
+    background-color: rgba(154, 118, 101, 0.8);
+    border-color: #FFF;
+    color: #FFF;
+}

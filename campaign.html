@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Pawsitive Society</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="img/Icon Paw.png" type="image/svg+xml">
+
+
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white; border-bottom: 1px solid #ddd;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/The Pawsitive Society.gif" alt="The Pawsitive Society Logo" class="img-fluid" style="max-height: 60px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link text-dark" href="about-us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="campaign.html">Campaign</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="dog-walking.html">Dog Walking</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="blog.html">Blog</a></li>
+        </ul>
+        <a class="btn btn-primary" href="login-page.html" style="background-color: #ae8a79; border-color: #816659;">Log in</a>
+      </div>
+    </div>
+  </nav>
+
+<div class="container mt-5">
+    <h2 class="d-inline-block">Discussion Board</h2>
+    <p class="mb-4">Leave your thoughts, questions, or comments below:</p>
+
+    <!-- Thread Form placed here between the discussion title and threads container -->
+    <div class="card mb-4 " id="threadFormCard" style="display: none;">
+      <div class="card-body">
+        <form id="threadForm">
+          <div class="mb-3">
+            <label for="threadName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="threadName" placeholder="Your name" required>
+          </div>
+          <div class="mb-3">
+            <label for="threadTopic" class="form-label">Topic</label>
+            <input type="text" class="form-control" id="threadTopic" placeholder="Topic" required>
+          </div>
+          <div class="mb-3">
+            <label for="threadDescription" class="form-label">Description</label>
+            <textarea class="form-control" id="threadDescription" rows="3" placeholder="Write your description here" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="threadImage" class="form-label">Upload Images (optional)</label>
+            <input type="file" id="threadImage" accept="image/*" class="form-control" multiple>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Thread</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Threads Container -->
+    <div id="threadsContainer" class="card mb-4">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h4 class="card-title mb-0">Threads</h4>
+          <!-- Add the Search Box beside the Threads title -->
+          <input type="text" id="searchBox" class="form-control w-25" placeholder="Search threads by topic" style="display: none;">
+        </div>
+        <ul class="list-group" id="threadsList">
+          <!-- Threads will be dynamically added here -->
+
+
+<li class="list-group-item"><div><strong>Guys buy Samsung Book 4 Pro 2024</strong> by Sezim<br><button class="btn btn-sm float-end btn-secondary" onclick="toggleThreadDetails(this)">Show Thread</button> <button class="btn btn-danger btn-sm float-end me-2  restricted-content" onclick="deleteThread(this)">Delete</button></div><div class="thread-details" style="display: none;"><br><p>It has ram 32 GB<br>In additoinal , 16 cores <br>no wait<br>oh it is right , 16 cores<br>MPU is Intel (R) AI Boosted<br>GPU is Inter (R) ARC (TM)</p><div class="like-section mt-3"><button class="btn btn-outline-success btn-sm like-button" onclick="likeThread(this)" data-liked="false">Like</button>
+          <span class="like-count">0</span> Likes</div></div></li>
+
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <button class="btn btn-success add-thread restricted-content" id="toggleFormBtn">Add Thread</button>
+    </div>
+</div>
+
+
+
+  <!-- Sticky Footer Section -->
+  <footer class="footer">
+    <div class="container p-4">
+      <div class="footer-content">
+        <h5 style="color: #ffffff">The Pawsitive Society</h5>
+        <p style="color: #ffffff">Chadwick International School | Email: thepawsitivesociety123@gmail.com | Phone: 010-3036-1842</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 The Pawsitive Society. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- External Script File -->
+  <script src="js/campaign.js"></script>
+  <script src="js/check-login.js"></script>
+
+</body>
+</html>
