@@ -2,12 +2,12 @@
 const members = [
     {
         name: "Jiwoo Choi",
-        description: "Co-Founder of the ClubCo-Leader",
+        description: "Co-Founder of the Club / Co-Leader",
         image: "img/slideshow_jiwoo.png"
     },
     {
         name: "Claire Choi",
-        description: "Founder of the Club Leader",
+        description: "Founder of the Club / Leader",
         image: "img/slideshow_claire.jpg"
     }
 ];
