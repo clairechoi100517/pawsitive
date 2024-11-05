@@ -1,5 +1,9 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
+uses: actions/checkout@v4
+with:
+  token: ${{ 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 }}
+
 
 on:
   # Runs on pushes targeting the default branch
@@ -14,6 +18,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
+
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
