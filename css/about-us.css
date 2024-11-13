@@ -1,6 +1,6 @@
 /* Background and General Body Style */
 body {
-    background-image: url('/pawsitive/images/background.jpg');
+    background-image: url('https://github.com/clairechoi100517/pawsitive/blob/main/img/background.jpg?raw=true'); /* 배경 이미지 경로 수정 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,10 +70,8 @@ body {
   body {
     display: flex;
     flex-direction: column;
-    background-image: url('/pawsitive/images/background.jpg');
+    background-image: url('https://github.com/clairechoi100517/pawsitive/blob/main/img/background.jpg?raw=true'); /* 이미지 파일 이름까지 포함 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-
-  
