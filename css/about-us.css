@@ -1,6 +1,6 @@
 /* Background and General Body Style */
 body {
-    background-image: url('../img/background.jpg'); /* 배경 이미지 경로 수정 */
+    background-image: url('/pawsitive/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@ body {
   body {
     display: flex;
     flex-direction: column;
-    background-image: url('/img/background.jpg'); /* 이미지 파일 이름까지 포함 */
+    background-image: url('/pawsitive/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

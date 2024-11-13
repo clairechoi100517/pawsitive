@@ -17,7 +17,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background-image: url('/img/dog walking1.jpg'); /* Replace with your image path */
+  background-image: url('/pawsitive/images/dog walking1.jpg');
   background-size: cover; /* Ensures the image covers the entire background */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -138,7 +138,7 @@ footer .text-muted {
 body {
   display: flex;
   flex-direction: column;
-  background-image: url('/img/background.jpg'); /* 이미지 파일 이름까지 포함 */
+  background-image: url('/pawsitive/images/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
